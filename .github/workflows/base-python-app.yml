@@ -1,4 +1,9 @@
-name: Python application
+name: My FastApi Dev Workflow
+env:
+  PROJECT_ID: ${{ secrets.RUN_PROJECT }}
+  RUN_REGION: us-central1
+  SERVICE_NAME: dev-my-fastapi
+  GITHUB_SHA: ${{ github.sha}}
 on:
   push:
     branches: [master, develop]
@@ -8,6 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code into workspace directory
       - uses: actions/checkout@v2
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
