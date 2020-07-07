@@ -1,14 +1,18 @@
 name: My FastApi Dev Workflow
-env:
-  PROJECT_ID: ${{ secrets.RUN_PROJECT }}
-  RUN_REGION: us-central1
-  SERVICE_NAME: dev-my-fastapi
-  GITHUB_SHA: ${{ github.sha}}
 on:
   push:
     branches: [master, develop]
   pull_request:
     branches: [master]
+
+env:
+  GITHUB_SHA: ${{ github.sha }}
+  GITHUB_REF: ${{ github.ref }}
+  IMAGE: dev-my-fastapi
+  PROJECT_ID: ${{ secrets.RUN_PROJECT }}
+  REGISTRY_HOSTNAME: gcr.io
+  RUN_REGION: us-central1
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -40,25 +44,38 @@ jobs:
       - name: Setup gcloud CLI
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
-          version: '290.0.1'
+          version: '270.0.0'
           service_account_key: ${{ secrets.RUN_SA_KEY }}
-          project_id: ${{ secrets.RUN_PROJECT }}
-      - name: Auth Configure Docker
-        run: |-
-          gcloud --quiet auth configure-docker
-      - name: Build the Docker image
-        shell: pwsh
-        run: |-
-          docker build --tag "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" .
-      - name: Push the Docker image to Google Container Registry
-        shell: pwsh
-        run: |-
-          docker push "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
+
+      # Configure docker to use the gcloud command-line tool as a credential helper
+      - run: |
+          # Set up docker to authenticate
+          # via gcloud command-line tool.
+          gcloud auth configure-docker
+
+      # Build the Docker image
+      - name: Build
+        run: |
+          export TAG=`echo $GITHUB_REF | awk -F/ '{print $NF}'`
+          echo $TAG
+          docker build -t "$REGISTRY_HOSTNAME"/"$IMAGE":"$TAG" \
+            --build-arg GITHUB_SHA="$GITHUB_SHA" \
+            --build-arg GITHUB_REF="$GITHUB_REF" .
+
+      # Push the Docker image to Google Container Registry
+      - name: Publish
+        run: |
+          export TAG=`echo $GITHUB_REF | awk -F/ '{print $NF}'`
+          echo $TAG
+          docker push "$REGISTRY_HOSTNAME"/"$IMAGE":"$TAG"
+          docker tag "$REGISTRY_HOSTNAME"/"$IMAGE":"$TAG" "$REGISTRY_HOSTNAME"/"$IMAGE":latest
+          docker push "$REGISTRY_HOSTNAME"/"$IMAGE":latest
+
       - name: Deploy image to Cloud Run
         run: |-
           gcloud run deploy "$SERVICE_NAME" \
             --quiet \
             --region "$RUN_REGION" \
-            --image "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" \
+            --image  "$REGISTRY_HOSTNAME"/"$IMAGE":latest \
             --platform "managed" \
             --allow-unauthenticated

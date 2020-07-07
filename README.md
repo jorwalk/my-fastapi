@@ -42,7 +42,7 @@ Python `fastapi` framework example starter.
    coverage run
    ```
 
-# Essentials
+## Essentials
 
 - [x] one unit test
 - [x] one end point
@@ -53,3 +53,7 @@ Python `fastapi` framework example starter.
 
 1. An example workflow that uses GitHub Actions to deploy to Cloud Run.
    - https://github.com/GoogleCloudPlatform/github-actions/blob/master/example-workflows/cloud-run/README.md
+
+## Helpful Links
+
+- [How to set up GitHub workflows and create GitHub Actions using Docker](https://itnext.io/how-to-set-up-github-workflows-and-create-github-actions-using-docker-3a5ba7ec0988)
