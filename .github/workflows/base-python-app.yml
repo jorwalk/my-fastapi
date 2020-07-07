@@ -10,7 +10,8 @@ env:
   RUN_REGION: us-central1
   SERVICE_NAME: my-fastapi-dev
 jobs:
-  build:
+  setup-build-deploy:
+    name: Setup, Build, and Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code into workspace directory
@@ -53,6 +54,6 @@ jobs:
           gcloud run deploy "$SERVICE_NAME" \
             --quiet \
             --region "$RUN_REGION" \
-            --image  "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
+            --image  "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" \
             --platform "managed" \
             --allow-unauthenticated
