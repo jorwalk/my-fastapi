@@ -36,6 +36,6 @@ jobs:
         pytest
     - name: Code coverage
       run: |
-      coverage run -m pytest -s
-      coverage html
+      python -m coverage run -m pytest -s
+      python -m coverage html
       codecov -t CODECOV_TOKEN
