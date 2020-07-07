@@ -42,11 +42,9 @@ jobs:
           gcloud --quiet auth configure-docker
       - name: Build the Docker image
         run: |-
-          cd server
           docker build --tag "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" .
       - name: Push the Docker image to Google Container Registry
         run: |-
-          cd server
           docker push "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
       - name: Deploy image to Cloud Run
         run: |-
