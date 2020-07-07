@@ -38,4 +38,4 @@ jobs:
         shell: pwsh
         run: |
           coverage report -m  
-          codecov -t CODECOV_TOKEN
+          codecov --token=${{ secrets.CODECOV_TOKEN }}
