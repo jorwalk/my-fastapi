@@ -2,12 +2,13 @@
 
 ## Action Workflow Status
 
-![Python application](https://github.com/jorwalk/my-fastapi/workflows/Python%20application/badge.svg?branch=master)
-
-Python `fastapi` framework example starter.
+- ![Python application](https://github.com/jorwalk/my-fastapi/workflows/Python%20application/badge.svg?branch=master)
+- [![codecov](https://codecov.io/gh/jorwalk/my-fastapi/branch/master/graph/badge.svg)](https://codecov.io/gh/jorwalk/my-fastapi)
+  Python `fastapi` framework example starter.
 
 # Setup
 
+- [x] [Code coverage](https://codecov.io/gh/jorwalk/my-fastapi)
 - [ ] create a virtual environment and activate
 - [ ] pip install packages
 - [ ] pip freeze requirements
