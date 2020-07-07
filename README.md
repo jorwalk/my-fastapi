@@ -1,4 +1,8 @@
-# my-fastapi
+# My FastAPI python library starter
+
+## Action Workflow Status
+
+![Python application](https://github.com/jorwalk/my-fastapi/workflows/Python%20application/badge.svg?branch=master)
 
 Python `fastapi` framework example starter.
 
@@ -15,13 +19,24 @@ Python `fastapi` framework example starter.
   pip install fastapi[all]
   pip install --upgrade pip
   pip install pytest
+  pip install codecov
+  pip install coverage
+
   pip freeze > requirements.txt
   pip install -r requirements.txt
+  coverage run -m pytest -s
+  coverage html
   ```
 
 1. To run the code in file `main.py`, and start uvicorn with:
+
    ```
    uvicorn main:app --reload
+   ```
+
+1. To run the code coverage
+   ```
+   coverage run
    ```
 
 # Essentials
