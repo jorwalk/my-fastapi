@@ -8,8 +8,7 @@ on:
 env:
   GITHUB_SHA: ${{ github.sha }}
   GITHUB_REF: ${{ github.ref }}
-  IMAGE: dev-my-fastapi
-  PROJECT_ID: ${{ secrets.RUN_PROJECT }}
+  IMAGE: ${{ secrets.RUN_PROJECT }}
   REGISTRY_HOSTNAME: gcr.io
   RUN_REGION: us-central1
 
