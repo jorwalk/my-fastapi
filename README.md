@@ -1,10 +1,11 @@
 # My FastAPI python library starter
 
+Python `fastapi` framework example starter.
+
 ## Action Workflow Status
 
 - ![Python application](https://github.com/jorwalk/my-fastapi/workflows/Python%20application/badge.svg?branch=master)
 - [![codecov](https://codecov.io/gh/jorwalk/my-fastapi/branch/master/graph/badge.svg)](https://codecov.io/gh/jorwalk/my-fastapi)
-  Python `fastapi` framework example starter.
 
 # Setup
 
@@ -22,7 +23,6 @@
   pip install pytest
   pip install codecov
   pip install coverage
-
   pip freeze > requirements.txt
   pip install -r requirements.txt
   coverage run -m pytest -s
