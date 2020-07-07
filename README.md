@@ -27,6 +27,8 @@ Python `fastapi` framework example starter.
   pip install -r requirements.txt
   coverage run -m pytest -s
   coverage html
+
+  git push --set-upstream origin develop
   ```
 
 1. To run the code in file `main.py`, and start uvicorn with:
@@ -42,10 +44,12 @@ Python `fastapi` framework example starter.
 
 # Essentials
 
-- [ ] one unit test
-- [ ] one end point
-- [ ] code coverage - `https://codecov.io/`
-- [ ] flake
-- [ ] github action
+- [x] one unit test
+- [x] one end point
+- [x] code coverage - `https://codecov.io/`
+- [x] flake
+- [x] github action
 - [ ] build a docker image
-- [ ] sonarcube
+
+1. An example workflow that uses GitHub Actions to deploy to Cloud Run.
+   - https://github.com/GoogleCloudPlatform/github-actions/blob/master/example-workflows/cloud-run/README.md
