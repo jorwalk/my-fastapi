@@ -1,2 +1,3 @@
 # my-fastapi
-Python framework fastapi starter
+
+Python `fastapi` framework example starter.
