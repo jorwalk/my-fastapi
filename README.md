@@ -57,3 +57,5 @@ Python `fastapi` framework example starter.
 ## Helpful Links
 
 - [How to set up GitHub workflows and create GitHub Actions using Docker](https://itnext.io/how-to-set-up-github-workflows-and-create-github-actions-using-docker-3a5ba7ec0988)
+
+- [FastAPI — authentication revisited: Enabling API key authentication](https://medium.com/data-rebels/fastapi-authentication-revisited-enabling-api-key-authentication-122dc5975680)
