@@ -10,7 +10,7 @@ codecov==2.1.8
 coverage==5.2
 dnspython==1.16.0
 email-validator==1.1.1
-fastapi==0.58.1
+fastapi==0.59.0
 # ERROR: graphene 2.1.8 has requirement aniso8601<=7,>=3, but you'll have aniso8601 8.0.0 which is incompatible.
 # graphene==2.1.8
 graphql-core==3.1.2
