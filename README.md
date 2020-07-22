@@ -46,10 +46,11 @@ Python `fastapi` framework example starter.
 
 - [x] one unit test
 - [x] one end point
+- [x]
 - [x] code coverage - `https://codecov.io/`
 - [x] flake
 - [x] github action
-- [ ] build a docker image
+- [x] build a docker image
 
 1. An example workflow that uses GitHub Actions to deploy to Cloud Run.
    - https://github.com/GoogleCloudPlatform/github-actions/blob/master/example-workflows/cloud-run/README.md
