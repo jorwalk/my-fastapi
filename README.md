@@ -27,7 +27,7 @@ Python `fastapi` framework example starter.
   pip install -r requirements.txt
   coverage run -m pytest -s
   coverage html
-
+  pip install package && pip freeze > requirements.txt
   git push --set-upstream origin develop
   ```
 
