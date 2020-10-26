@@ -1,9 +1,11 @@
 from enum import Enum
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routers import files
+from fastapi.staticfiles import StaticFiles
+from .routers import files, socket
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 
 class ModelName(str, Enum):
@@ -16,6 +18,7 @@ origins = [
     "http://localhost:5000"
 ]
 app.include_router(files.router)
+app.include_router(socket.router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
