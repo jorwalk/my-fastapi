@@ -11,14 +11,14 @@ coverage==5.3
 dnspython==2.0.0
 email-validator==1.1.1
 fastapi==0.61.1
-# ERROR: graphene 2.1.8 has requirement aniso8601<=7,>=3, but you'll have aniso8601 8.0.0 which is incompatible.
-# graphene==2.1.8
+graphene==2.1.8
 graphql-core==3.1.2
 graphql-relay==3.0.0
 h11==0.11.0
 httptools==0.1.1
 idna==2.10
 importlib-metadata==2.0.0
+iniconfig==1.1.1
 itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
@@ -37,10 +37,11 @@ requests==2.24.0
 Rx==3.1.1
 six==1.15.0
 starlette==0.13.8
+toml==0.10.1
 ujson==4.0.1
 urllib3==1.25.11
-uvicorn==0.11.8
+uvicorn==0.12.2
 uvloop==0.14.0
 wcwidth==0.2.5
 websockets==8.1
-zipp==3.3.1
+zipp==3.4.0

@@ -9,25 +9,22 @@ Python `fastapi` framework example starter.
 
 # Setup
 
-- [x] [Code coverage](https://codecov.io/gh/jorwalk/my-fastapi)
-- [ ] create a virtual environment and activate
-- [ ] pip install packages
-- [ ] pip freeze requirements
-
-  ```shell
-  mkdir .my_venv
-  python -m venv .my_venv
-  source .my_venv/bin/activate
-  pip install fastapi[all]
-  pip install --upgrade pip
-  pip install pytest
-  pip install codecov
-  pip install coverage
-  pip freeze > requirements.txt
-  pip install -r requirements.txt
-  coverage run -m pytest -s
-  coverage html
-  ```
+```shell
+mkdir .my_venv
+python -m venv .my_venv
+source .my_venv/bin/activate
+pip install fastapi[all]
+pip install --upgrade pip
+pip install pytest
+pip install codecov
+pip install coverage
+pip freeze > requirements.txt
+pip install -r requirements.txt
+coverage run -m pytest -s
+coverage html
+pip install package && pip freeze > requirements.txt
+git push --set-upstream origin develop
+```
 
 1. To run the code in file `main.py`, and start uvicorn with:
 
@@ -39,13 +36,3 @@ Python `fastapi` framework example starter.
    ```
    coverage run
    ```
-
-# Essentials
-
-- [ ] one unit test
-- [ ] one end point
-- [ ] code coverage - `https://codecov.io/`
-- [ ] flake
-- [ ] github action
-- [ ] build a docker image
-- [ ] sonarcube
