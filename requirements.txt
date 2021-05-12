@@ -20,7 +20,7 @@ idna==2.10
 importlib-metadata==2.0.0
 iniconfig==1.1.1
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==3.0.0
 MarkupSafe==1.1.1
 more-itertools==8.6.0
 orjson==3.4.4
