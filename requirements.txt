@@ -25,7 +25,7 @@ MarkupSafe==1.1.1
 more-itertools==8.6.0
 orjson==3.4.4
 packaging==20.4
-Pillow==8.0.1
+Pillow==9.1.1
 pluggy==0.13.1
 promise==2.3
 py==1.9.0
