@@ -29,7 +29,7 @@ Pillow==8.0.1
 pluggy==0.13.1
 promise==2.3
 py==1.9.0
-pydantic==1.7.2
+pydantic==1.10.3
 pyparsing==2.4.7
 pytest==6.1.2
 python-multipart==0.0.5
